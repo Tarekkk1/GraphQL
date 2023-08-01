@@ -7,6 +7,23 @@ return [
         }
     ],
     'Query' => [
+        'addBook' => function ($root, $args, $context) {
+            $title = $args['title'];
+            $authorId = $args['author_id'];
+    
+            $context['db']->insert('book', [
+                'title' => $title,
+                'author_id' => $authorId,
+            ]);
+    
+            $id = $context['db']->lastInsertId();
+    
+            $book = $context['db']->fetchAssoc("SELECT * FROM book WHERE id = ?", [$id]);
+    
+            return $book;
+        },
+        
+        
         'getBooks' => function ($root, $args, $context) {
             
     

@@ -1,9 +1,14 @@
 schema {
   query: Query
+  mutation: Mutation
 }
 
 type Query {
   getBooks: [Book]
+}
+
+type Mutation {
+  addBook(title: String!, author: String!): Book
 }
 
 type Book {
