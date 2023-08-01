@@ -6,6 +6,8 @@ use Slim\App;
 
 return function (App $app) {
     $app->any('/graphql', GraphQLController::class . ':index');
- 
+   
+    
+
     
 };
