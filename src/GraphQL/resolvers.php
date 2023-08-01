@@ -10,29 +10,21 @@ return [
         'getBooks' => function ($root, $args, $context) {
             
     
-             $books = $context['db']->fetchAll("SELECT * FROM book");
-          
-            // $dbConfig = [
-            //     'dbname'   => 'graphSQl',
-            //     'host'     => 'localhost',
-            //     'username' => 'tarek',
-            //     'password' => 'tarek',
-            //     'driver'   => 'pdo_mysql',
-            // ];
-            
-            // try {
            
-            //     $connection = \Doctrine\DBAL\DriverManager::getConnection($dbConfig);
-            //     $connection->connect();
-                
+            //   $connect=mysqli_connect("127.0.0.1","tarek","tarek","graphql");
+            // if (mysqli_connect_errno())
+            // { 
+            //     return [ ["id" => 1, "title" => "error", "author_id" => 1]];
+            //     die("Failed to connect to MySQL: " . mysqli_connect_error()); }
+            
             //     return ["data" => "good", "connection" => "connected"];
-            // } catch (\Doctrine\DBAL\Exception\ConnectionException $e) {
-            //     return ["data" => "bad", "connection" => "not connected"];
-            // }
 
            
             
           
+             $books = $context['db']->fetchAll("SELECT * FROM book");
+          
+            
       
         //     $books = [
         //         [
