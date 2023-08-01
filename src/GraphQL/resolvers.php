@@ -9,6 +9,7 @@ return [
     'Query' => [
         'getBooks' => function ($root, $args, $context) {
             $books = $context['db']->fetchAll("SELECT * FROM book");
+      
             return $books;
         }
     ]

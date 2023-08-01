@@ -61,6 +61,7 @@ class GraphQLController
         $server = new StandardServer($config);
         $response = $server->processPsrRequest($request, $response, $response->getBody());
 
+        
         $sqlQueryLogger = $this->db->getConfiguration()->getSQLLogger();
         $this->logger->info(json_encode($sqlQueryLogger->queries));
 
